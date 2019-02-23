@@ -13,7 +13,12 @@ namespace FlowerShop
         // should apply a 20% mark-up to each flower.
         public double Price {
             get {
-                return 0;
+                double amount = 0;
+                foreach (Flower f in flowers)
+                {
+                    amount += (f.Cost * 1.20);
+                }
+                return amount;
             }
         }
 
@@ -52,7 +57,7 @@ namespace FlowerShop
 
         public void Deliver()
         {
-            throw new NotImplementedException();
+            this.isDelivered = true;
         }
     }
 }
